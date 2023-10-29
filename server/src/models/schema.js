@@ -15,6 +15,7 @@ const categorySchema = new mongoose.Schema({
     description: { type: String, }
 });
 
+
 const productSchema = new mongoose.Schema({
     productname: { type: String, required: true },
     description: { type: String, required: true },
@@ -25,8 +26,6 @@ const productSchema = new mongoose.Schema({
     rating: { type: Number, required: true },
     dateCreated: { type: Date, default: Date.now }
 });
-
-
 
 const addToCartSchema = new mongoose.Schema({
     userId: { type: String, required: true },

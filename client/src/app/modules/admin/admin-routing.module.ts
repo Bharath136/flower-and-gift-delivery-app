@@ -8,7 +8,6 @@ import { UpdateProductComponent } from './components/update-product/update-produ
 import { OrdersComponent } from './components/orders/orders.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { PaymentComponent } from './components/payment/payment.component';
 import { UsersComponent } from './components/users/users.component';
 
 
@@ -37,9 +36,6 @@ const routes: Routes = [
       {
         path:'dashboard',component:DashboardComponent
       },
-      // {
-      //   path:'payment',component:PaymentComponent
-      // },
       {
         path:'users',component:UsersComponent
       },

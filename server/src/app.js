@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const { MONGO_URI } = require('./db/connect');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 const models = require("./models/schema");
 
 // app.use(bodyParser.json());
@@ -399,16 +400,19 @@ app.post('/login', async (req, res) => {
     }
 });
 
+
 // user schema
 app.post('/register', async (req, res) => {
     try {
         const { firstname, lastname, username, email, password } = req.body;
+
         const user = await models.Users.findOne({ email });
 
         if (user) {
             return res.status(400).send('User already exists');
         }
         const salt = await bcrypt.genSalt(10);
+        
         const hashedPassword = await bcrypt.hash(password, salt);
 
         // Create a new user object

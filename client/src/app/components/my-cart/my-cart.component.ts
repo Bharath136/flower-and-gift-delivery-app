@@ -39,7 +39,6 @@ export class MyCartComponent {
         this.isLoading = false
       });
     });
-
   }
 
 
